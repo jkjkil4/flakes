@@ -108,9 +108,9 @@
   #  wget
 
     fastfetch
-    git
+    # git # manage by Home Manager
     
-    neovim
+    # neovim # manage by Home Manager
     xclip
 
     clash-verge-rev
