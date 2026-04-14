@@ -130,6 +130,7 @@
     
     # neovim # manage by Home Manager
     xclip
+    sbctl  # used by secureboot
 
     clash-verge-rev
 
