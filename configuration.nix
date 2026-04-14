@@ -15,16 +15,35 @@
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
-  # Use GRand Unified Bootloader
+  
+  # limine
   boot.loader = {
+    # efi.efiSysMountPoint = "/efi";
     efi.canTouchEfiVariables = true;
-    grub = {
+    limine = {
       enable = true;
-      device = "nodev";
-      useOSProber = true;
-      efiSupport = true;
+      maxGenerations = 5;
+      extraConfig = ''
+        remember_last_entry: yes
+      '';
+      extraEntries = ''
+        /Windows
+            protocol: efi
+            path: boot(1):/EFI/Microsoft/Boot/bootmgfw.efi
+      '';
     };
   };
+
+  # Use GRand Unified Bootloader
+  # boot.loader = {
+  #   efi.canTouchEfiVariables = true;
+  #   grub = {
+  #     enable = true;
+  #     device = "nodev";
+  #     useOSProber = true;
+  #     efiSupport = true;
+  #   };
+  # };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
