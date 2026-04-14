@@ -97,6 +97,12 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  services.fprintd = {
+    enable = true;
+    tod.enable = true;
+    tod.driver = pkgs.libfprint-2-tod1-elan;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jkjkil = {
     isNormalUser = true;
