@@ -21,6 +21,7 @@
     efi.canTouchEfiVariables = true;
     limine = {
       enable = true;
+      secureBoot.enable = true;
       maxGenerations = 5;
       extraConfig = ''
         remember_last_entry: yes
