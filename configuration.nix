@@ -18,7 +18,6 @@
   
   # limine
   boot.loader = {
-    # efi.efiSysMountPoint = "/efi";
     efi.canTouchEfiVariables = true;
     limine = {
       enable = true;
@@ -29,7 +28,7 @@
       extraEntries = ''
         /Windows
             protocol: efi
-            path: boot(1):/EFI/Microsoft/Boot/bootmgfw.efi
+            path: uuid(ea3fa786-3e98-426e-a40f-ff7049853259):/EFI/Microsoft/Boot/bootmgfw.efi
       '';
     };
   };
