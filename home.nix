@@ -52,6 +52,13 @@
     enable = true;
     extraConfig = ''
       set number relativenumber
+      nnoremap <Esc> :nohlsearch<CR>
+
+      augroup indent_rules
+        autocmd!
+	autocmd FileType python setlocal ts=4 sw=4 et
+	autocmd FileType nix setlocal ts=2 sw=2 et
+      augroup END
     '';
   };
 
