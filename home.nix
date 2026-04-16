@@ -44,12 +44,8 @@
   programs.git = {
     enable = true;
     settings = {
-      user = {
-        name = "jkjkil4";
-      	email = "1173374788@qq.com";
-      };
-      http.proxy = "127.0.0.1:7897";
-      https.proxy = "127.0.0.1:7897";
+      user.name = "jkjkil4";
+      user.email = "1173374788@qq.com";
     };
   };
 

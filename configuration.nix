@@ -12,6 +12,7 @@
       ./modules/locale/index.nix
       ./modules/fprint-elan-04f3-0c4c.nix
       ./modules/limine-2os.nix
+      ./modules/vpn.nix
     ];
 
   boot.loader.limineExt.windowsUuid = "ea3fa786-3e98-426e-a40f-ff7049853259";
@@ -27,11 +28,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  networking.proxy = {
-    default = "http://127.0.0.1:7897";
-  };
-  networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -95,7 +91,14 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/jkjkil/flakes";  # 可以不硬编码 jkjkil 吗？
+    flake = "$HOME/flakes";
+  };
+
+  programs.vpn = {
+    enable = true;
+    software = pkgs.clash-verge-rev;
+    port = "7897";
+    users = ["jkjkil"];
   };
 
   # List packages installed in system profile.
@@ -103,8 +106,6 @@
   #  wget
     fastfetch
     sbctl  # used by secureboot
-
-    clash-verge-rev
 
     osu-lazer-bin
     qq
