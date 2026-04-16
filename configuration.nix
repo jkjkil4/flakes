@@ -161,7 +161,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "~/flakes";
+    flake = "/home/jkjkil/flakes";
   };
 
   # List packages installed in system profile. To search, run:
