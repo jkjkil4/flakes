@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  imports = 
+    [
+      ./modules/neovim.nix
+    ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jkjkil";
@@ -47,9 +52,6 @@
       https.proxy = "127.0.0.1:7897";
     };
   };
-
-  programs.neovim.enable = true;
-  home.file.".config/nvim".source = ./nvim;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

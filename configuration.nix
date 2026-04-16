@@ -98,18 +98,10 @@
     flake = "/home/jkjkil/flakes";  # 可以不硬编码 jkjkil 吗？
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-
     fastfetch
-    # git # manage by Home Manager
-    fd
-
-    # neovim # manage by Home Manager
-    xclip
     sbctl  # used by secureboot
 
     clash-verge-rev
