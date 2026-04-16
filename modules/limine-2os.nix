@@ -13,20 +13,23 @@ in
   };
 
   config = {
-    boot.loader.limine = {
-      enable = true;
-      secureBoot.enable = true;
-      maxGenerations = 5;
+    boot.loader = {
+      efi.canTouchEfiVariables = true;
+      limine = {
+        enable = true;
+        secureBoot.enable = true;
+        maxGenerations = 5;
 
-      extraConfig = ''
-        remember_last_entry: yes
-      '';
+        extraConfig = ''
+          remember_last_entry: yes
+        '';
 
-      extraEntries = ''
-        /Windows
-            protocol: efi
-            path: uuid(${cfg.windowsUuid}):/EFI/Microsoft/Boot/bootmgfw.efi
-      '';
+        extraEntries = ''
+          /Windows
+              protocol: efi
+              path: uuid(${cfg.windowsUuid}):/EFI/Microsoft/Boot/bootmgfw.efi
+        '';
+      };
     };
   };
 }
