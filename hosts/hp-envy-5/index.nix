@@ -65,9 +65,6 @@
     isNormalUser = true;
     description = "jkjkil";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
 
   home-manager = {
