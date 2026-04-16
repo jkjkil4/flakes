@@ -172,7 +172,8 @@
 
     fastfetch
     # git # manage by Home Manager
-    
+    fd
+
     # neovim # manage by Home Manager
     xclip
     sbctl  # used by secureboot
