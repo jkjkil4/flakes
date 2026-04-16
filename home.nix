@@ -41,26 +41,15 @@
     settings = {
       user = {
         name = "jkjkil4";
-	email = "1173374788@qq.com";
+      	email = "1173374788@qq.com";
       };
       http.proxy = "127.0.0.1:7897";
       https.proxy = "127.0.0.1:7897";
     };
   };
 
-  programs.neovim = {
-    enable = true;
-    extraConfig = ''
-      set number relativenumber
-      nnoremap <Esc> :nohlsearch<CR>
-
-      augroup indent_rules
-        autocmd!
-	autocmd FileType python setlocal ts=4 sw=4 et
-	autocmd FileType nix setlocal ts=2 sw=2 et
-      augroup END
-    '';
-  };
+  programs.neovim.enable = true;
+  home.file.".config/nvim".source = ./nvim;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
