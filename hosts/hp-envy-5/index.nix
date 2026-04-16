@@ -9,15 +9,15 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      ./modules/locale/index.nix
-      ./modules/fprint-elan-04f3-0c4c.nix
-      ./modules/limine-2os.nix
-      ./modules/vpn.nix
+      ../../modules/locale/index.nix
+      ../../modules/fprint-elan-04f3-0c4c.nix
+      ../../modules/limine-2os.nix
+      ../../modules/vpn.nix
     ];
 
   boot.loader.limineExt.windowsUuid = "ea3fa786-3e98-426e-a40f-ff7049853259";
  
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "hp-envy-5"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
