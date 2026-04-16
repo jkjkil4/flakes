@@ -9,42 +9,13 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      ./locale/index.nix
+      ./modules/locale/index.nix
+      ./modules/fprint-elan-04f3-0c4c.nix
+      ./modules/limine-2os.nix
     ];
 
-  # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
-  
-  # limine
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    limine = {
-      enable = true;
-      secureBoot.enable = true;
-      maxGenerations = 5;
-      extraConfig = ''
-        remember_last_entry: yes
-      '';
-      extraEntries = ''
-        /Windows
-            protocol: efi
-            path: uuid(ea3fa786-3e98-426e-a40f-ff7049853259):/EFI/Microsoft/Boot/bootmgfw.efi
-      '';
-    };
-  };
-
-  # Use GRand Unified Bootloader
-  # boot.loader = {
-  #   efi.canTouchEfiVariables = true;
-  #   grub = {
-  #     enable = true;
-  #     device = "nodev";
-  #     useOSProber = true;
-  #     efiSupport = true;
-  #   };
-  # };
-
+  boot.loader.limineExt.windowsUuid = "ea3fa786-3e98-426e-a40f-ff7049853259";
+ 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -97,43 +68,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      libfprint = prev.libfprint.overrideAttrs (old: {
-        src = prev.fetchFromGitLab {
-          domain = "gitlab.freedesktop.org";
-          owner = "depau";
-          repo = "libfprint";
-          rev = "3cd94299";
-          hash = "sha256-KIH0hJDAGhIhYRzNLiWPHJm2a/1vCaBlF5qEZc7YXB8=";
-        };
-
-        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [
-          prev.pkg-config
-        ];
-        buildInputs = (old.buildInputs or []) ++ [
-          prev.nss
-        ];
-      });
-      fprintd = prev.fprintd.overrideAttrs (_: {
-        version = "1.94.4";
-	src = prev.fetchFromGitLab {
-	  domain = "gitlab.freedesktop.org";
-	  owner = "libfprint";
-	  repo = "fprintd";
-	  rev = "refs/tags/v1.94.4";
-	  hash = "sha256-B2g2d29jSER30OUqCkdk3+Hv5T3DA4SUKoyiqHb8FeU=";
-	};
-      });
-    })
-  ];
-
-  services.fprintd = {
-    enable = true;
-    # tod.enable = true;
-    # tod.driver = pkgs.libfprint-2-tod1-elan;
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jkjkil = {
     isNormalUser = true;
@@ -161,7 +95,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/jkjkil/flakes";
+    flake = "/home/jkjkil/flakes";  # 可以不硬编码 jkjkil 吗？
   };
 
   # List packages installed in system profile. To search, run:
