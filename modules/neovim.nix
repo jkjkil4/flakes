@@ -11,5 +11,13 @@
     gcc
     gnumake
     tree-sitter
+    # nix
+    nixd
+    # lua
+    lua-language-server
+    stylua
+    # python
+    pyright
+    ruff
   ];
 }
