@@ -2,15 +2,16 @@
   "plain main": {
     "prefix": "pmain",
     "body": [
-      "int main() {",
-      "    $1",
+      "int main()",
+      "{",
+      "    $0",
       "",
       "    return 0;",
       "}"
     ],
     "description": "main entrypoint without argc & argv"
   },
-  "OI boilderpplate": {
+  "OI boilerpplate": {
     "prefix": "oi",
     "body": [
       "#include <iostream>",
@@ -19,11 +20,20 @@
       "",
       "int main()",
       "{",
-      "    $1",
+      "    $0",
       "",
       "    return 0;",
       "}"
     ],
     "description": "main entrypoint without argc & argv"
+  },
+  "for loop start from 1": {
+    "prefix": "for1",
+    "body": [
+      "for (int $1 = 1; $1 <= $2; $1++) {",
+      "    $0",
+      "}"
+   ],
+    "description": "for loop start from 1 to n"
   }
 }
