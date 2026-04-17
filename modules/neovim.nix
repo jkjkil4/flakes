@@ -7,8 +7,6 @@
   home.packages = with pkgs; [
     # 文件搜索
     fd
-    # 剪贴板交互 
-    xclip
     # C Compiler
     gcc
     gnumake

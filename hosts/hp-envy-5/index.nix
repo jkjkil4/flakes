@@ -100,6 +100,8 @@
     fastfetch
     sbctl  # used by secureboot
 
+    xclip
+
     osu-lazer-bin
     qq
   ];
