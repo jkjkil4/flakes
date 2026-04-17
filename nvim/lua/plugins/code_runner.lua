@@ -3,7 +3,7 @@ return {
   keys = {
     {
       "<leader>r",
-      ":RunCode<CR>",
+      ":w<CR>:RunCode<CR>",
       desc = "Run Code",
     },
   },
