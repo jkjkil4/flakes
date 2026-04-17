@@ -1,0 +1,29 @@
+{
+  "plain main": {
+    "prefix": "pmain",
+    "body": [
+      "int main() {",
+      "    $1",
+      "",
+      "    return 0;",
+      "}"
+    ],
+    "description": "main entrypoint without argc & argv"
+  },
+  "OI boilderpplate": {
+    "prefix": "oi",
+    "body": [
+      "#include <iostream>",
+      "",
+      "using namespace std;",
+      "",
+      "int main()",
+      "{",
+      "    $1",
+      "",
+      "    return 0;",
+      "}"
+    ],
+    "description": "main entrypoint without argc & argv"
+  }
+}
