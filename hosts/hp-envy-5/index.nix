@@ -89,7 +89,7 @@
 
   programs.vpn = {
     enable = true;
-    software = pkgs.clash-verge-rev;
+    software = pkgs.flclash;
     port = "7897";
     users = [ "jkjkil" ];
   };
