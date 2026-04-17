@@ -11,9 +11,9 @@ return {
     filetype = {
       cpp = {
         "cd $dir &&",
-        "mkdir -p temp &&",
-        'g++ $dir/$fileName -o $dir/temp/$fileNameWithoutExt -std=c++17 &&',
-        "$dir/temp/$fileNameWithoutExt",
+        "mkdir -p build &&",
+        'g++ $dir/$fileName -o $dir/build/$fileNameWithoutExt -std=c++17 &&',
+        "$dir/build/$fileNameWithoutExt",
       },
     },
   },
