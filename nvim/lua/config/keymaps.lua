@@ -2,5 +2,5 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
-vim.keymap.set("n", "<C-a>", "gg0vG", { silent = true })
+vim.keymap.set("n", "<C-a>", "ggVG", { silent = true })
 
