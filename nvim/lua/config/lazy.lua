@@ -54,4 +54,5 @@ require("lazy").setup({
 
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#8ff0a4" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#8ff0a4" })
+vim.g.snacks_animate = false
 
