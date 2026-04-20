@@ -12,8 +12,13 @@ return {
       cpp = {
         "cd $dir &&",
         "mkdir -p build &&",
-        'g++ $dir/$fileName -o $dir/build/$fileNameWithoutExt -std=c++17 &&',
+        "g++ $dir/$fileName -o $dir/build/$fileNameWithoutExt -std=c++17 &&",
         "$dir/build/$fileNameWithoutExt",
+      },
+      typst = {
+        "cd $dir &&",
+        "tinymist compile $dir/$fileName &&",
+        "xdg-open $dir/$fileNameWithoutExt.pdf",
       },
     },
   },
