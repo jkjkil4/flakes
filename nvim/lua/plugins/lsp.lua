@@ -15,6 +15,7 @@ return {
         -- ruff = {
         --   cmd = { "ruff", "server" },
         -- },
+        tinymist = {},
       },
     },
   },

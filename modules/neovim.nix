@@ -19,5 +19,7 @@
     # python
     pyright
     ruff
+    # typst
+    tinymist
   ];
 }
