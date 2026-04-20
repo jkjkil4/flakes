@@ -7,8 +7,8 @@
       noto-fonts-color-emoji
       nerd-fonts.symbols-only
       # 以上三个几乎是必须安装的
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
+      noto-fonts-cjk-sans-static
+      noto-fonts-cjk-serif-static
       # sarasa-gothic  #更纱黑体（字体比较大
       # 下面是一些常见的编程字体随便选
       source-code-pro

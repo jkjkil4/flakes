@@ -3,6 +3,7 @@
 {
   imports = [
     ./fonts.nix
+    ./noto-sc.nix
     ./inputs.nix
   ];
 
