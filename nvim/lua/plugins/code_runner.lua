@@ -16,9 +16,7 @@ return {
         "$dir/build/$fileNameWithoutExt",
       },
       typst = {
-        "cd $dir &&",
-        "tinymist compile $dir/$fileName &&",
-        "xdg-open $dir/$fileNameWithoutExt.pdf",
+        "tinymist compile $dir/$fileName && firefox $dir/$fileNameWithoutExt.pdf",
       },
     },
   },
