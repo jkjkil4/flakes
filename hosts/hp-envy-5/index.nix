@@ -103,7 +103,6 @@
     xclip
 
     osu-lazer-bin
-    qq
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
