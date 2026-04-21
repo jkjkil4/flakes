@@ -12,9 +12,9 @@ return {
           },
         },
         pyright = {},
-        -- ruff = {
-        --   cmd = { "ruff", "server" },
-        -- },
+        ruff = {
+          cmd = { "ruff", "server" },
+        },
         tinymist = {},
       },
     },
