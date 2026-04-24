@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     # 文件搜索
     fd
+    ripgrep
     # C Compiler
     gcc
     gnumake
