@@ -90,7 +90,7 @@
   programs.vpn = {
     enable = true;
     software = pkgs.flclash;
-    port = "7890";
+    port = "7897";
     users = [ "jkjkil" ];
   };
 
