@@ -6,6 +6,7 @@
       ../../modules/neovim.nix
       ../../modules/vscode.nix
       ../../modules/tencent/index.nix
+      ../../modules/onlyoffice.nix
     ];
 
   # Home Manager needs a bit of information about you and the paths it should
