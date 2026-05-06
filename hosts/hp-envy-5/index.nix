@@ -98,11 +98,8 @@
   environment.systemPackages = with pkgs; [
   #  wget
     fastfetch
-    sbctl  # used by secureboot
 
     xclip
-
-    osu-lazer-bin
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   cfg = config.boot.loader.limineExt;
@@ -13,6 +13,10 @@ in
   };
 
   config = {
+    environment.systemPackages = with pkgs; [
+      sbctl  # used by secureboot
+    ];
+
     boot.loader = {
       efi.canTouchEfiVariables = true;
       limine = {
