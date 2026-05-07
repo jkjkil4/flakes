@@ -34,6 +34,15 @@ in
       noProxy = "127.0.0.1,localhost,internal.domain";
     };
 
+    programs.ssh = {
+      extraConfig = ''
+        Host github.com
+          HostName github.com
+          User git
+          ProxyCommand nc -X connect -x 127.0.0.1:${cfg.port} %h %p
+      '';
+    };
+
     # --- home ---
     home-manager.users =
       lib.genAttrs cfg.users (user: {
