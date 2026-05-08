@@ -102,6 +102,33 @@
     xclip
   ];
 
+  # NVIDIA configurations
+  services.xserver.videoDrivers = [
+    "modesetting"
+    "nvidia"
+  ];
+
+  hardware.graphics.enable = true;
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+
+    open = false;
+
+    nvidiaSettings = true;
+
+    powerManagement.enable = false;
+
+    prime = {
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
+
+      intelBusId = "PCI:0@0:2:0";
+      nvidiaBusId = "PCI:1@0:0:0";
+    };
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
