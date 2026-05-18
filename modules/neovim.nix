@@ -2,7 +2,8 @@
 
 {
   programs.neovim.enable = true;
-  home.file.".config/nvim".source = ../nvim;
+  home.file.".config/nvim".source = 
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/flakes/nvim";
 
   home.packages = with pkgs; [
     # 文件搜索
