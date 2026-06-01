@@ -15,6 +15,7 @@
       # hack-font
       # jetbrains-mono
       # maple-mono.variable
+      vista-fonts-chs
     ];
 
     # 简单配置一下 fontconfig 字体顺序，以免 fallback 到不想要的字体
