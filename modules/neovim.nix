@@ -2,6 +2,10 @@
 
 {
   programs.neovim.enable = true;
+
+  programs.neovim.withPython3 = false;
+  programs.neovim.withRuby = false;
+
   home.file.".config/nvim".source = 
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/flakes/nvim";
 
