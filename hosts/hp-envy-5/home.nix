@@ -8,6 +8,7 @@
       ../../modules/tencent/index.nix
       ../../modules/onlyoffice.nix
       ../../modules/git.nix
+      ../../modules/uv.nix
     ];
 
   # Home Manager needs a bit of information about you and the paths it should
