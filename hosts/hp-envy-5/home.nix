@@ -30,6 +30,8 @@
   };
 
   home.packages = with pkgs; [
+    uv
+
     osu-lazer-bin
     discord
   ];
