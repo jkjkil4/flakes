@@ -14,8 +14,7 @@
       ../../modules/vpn.nix
     ];
 
-  # TODO:
-  # boot.loader.limineExt.windowsUuid = "ea3fa786-3e98-426e-a40f-ff7049853259";
+  boot.loader.limineExt.windowsUuid = "3dc09b48-8ccd-43cd-8a05-9f58888b8340";
  
   networking.hostName = "asus"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
