@@ -19,6 +19,13 @@
           inputs.home-manager.nixosModules.default
         ];
       };
+      asus = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/asus/index.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
   };
 }
