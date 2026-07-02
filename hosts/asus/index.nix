@@ -104,32 +104,27 @@
   # NVIDIA configurations
   services.xserver.videoDrivers = [
     "modesetting"
-    # TODO:
-    # "nvidia"
+    "nvidia"
   ];
 
-  # TODO:
-  # hardware.graphics.enable = true;
+  hardware.graphics.enable = true;
 
-  # TODO:
-  # hardware.nvidia = {
-  #   modesetting.enable = true;
-  #   package = config.boot.kernelPackages.nvidiaPackages.beta;
-  #
-  #   open = false;
-  #
-  #   nvidiaSettings = true;
-  #
-  #   powerManagement.enable = false;
-  #
-  #   prime = {
-  #     offload.enable = true;
-  #     offload.enableOffloadCmd = true;
-  #
-  #     intelBusId = "PCI:0@0:2:0";
-  #     nvidiaBusId = "PCI:1@0:0:0";
-  #   };
-  # };
+  hardware.nvidia = {
+    modesetting.enable = true;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+
+    open = true;
+
+    nvidiaSettings = true;
+
+    prime = {
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
+
+      amdgpuBusId = "PCI:102@0:0:0";
+      nvidiaBusId = "PCI:100@0:0:0";
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
