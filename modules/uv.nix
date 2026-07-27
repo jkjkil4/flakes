@@ -5,8 +5,12 @@ let
 in
 {
   home.packages = [
-    python
     pkgs.uv
+
+    (python.withPackages (ps: [
+      ps.websockets
+      ps.qrcode
+    ]))
   ];
 
   home.sessionVariables = {
