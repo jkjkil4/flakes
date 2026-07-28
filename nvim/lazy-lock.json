@@ -7,6 +7,7 @@
   "catppuccin": { "branch": "main", "commit": "0303a7208dba448c459767486a38a6ec05c4216b" },
   "code_runner.nvim": { "branch": "main", "commit": "faeea87f6038307eabbe1d1ea97ab6b1d6fd33b5" },
   "conform.nvim": { "branch": "master", "commit": "619363c30309d29ffa631e67c8183f2a72caa373" },
+  "dglab.nvim": { "branch": "main", "commit": "9f70517b7a6d749a8d1960c7b22d82d1ff7d09a2" },
   "flash.nvim": { "branch": "main", "commit": "fcea7ff883235d9024dc41e638f164a450c14ca2" },
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
   "gitsigns.nvim": { "branch": "main", "commit": "25050e4ed39e628282831d4cbecb1850454ce915" },
